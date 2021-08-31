@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import axios from 'axios';
+import { Carousel } from 'react-bootstrap';
 
 
 
@@ -10,15 +11,15 @@ const Header = (props) => {
 
     const iState = [
         {
-            "imageUrl" : "/images/freedotcomdomain.png",
-            "imageName" : "Free .com domain",
-            "imageId" : "BANNER1",
-            "affiliateUrl" : "https://namecheap.pxf.io/c/2733920/1124617/5618"
-        },{
-            "imageUrl" : "/images/bundleoffers.png",
-            "imageName" : "Bundle offers",
-            "imageId" : "BANNER2",
-            "affiliateUrl" : "https://namecheap.pxf.io/c/2733920/738168/5618"
+            "imageUrl": "/images/freedotcomdomain.png",
+            "imageName": "Free .com domain",
+            "imageId": "BANNER1",
+            "affiliateUrl": "https://namecheap.pxf.io/c/2733920/1124617/5618"
+        }, {
+            "imageUrl": "/images/bundleoffers.png",
+            "imageName": "Bundle offers",
+            "imageId": "BANNER2",
+            "affiliateUrl": "https://namecheap.pxf.io/c/2733920/738168/5618"
         }
     ]
 
@@ -48,20 +49,22 @@ const Header = (props) => {
 
     return (
         <>
-        
-        <div className="container">
 
-
-            
+            <div className="container">
 
 
 
-            <div className="container py-5">
 
-                <div className="row">
-                    <div className="col-md-12">
-                        <div>
+
+
+                <div className="container py-5">
+
+                    <div className="row">
+                        <div className="col-md-12">
                             <div>
+
+                               
+
                                 <Slide autoplay={autoplay}>
                                 
                                     {images.map(elem=> {
@@ -79,13 +82,13 @@ const Header = (props) => {
                                     
                                     
                                 </Slide>
+
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
-        </div>
         </>
     )
 }

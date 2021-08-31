@@ -7,13 +7,18 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import axios from 'axios';
+import {
+  Link
+} from "react-router-dom";
+
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Container } from 'react-bootstrap';
 
 
 const useStyles = makeStyles({
   root: {
     maxWidth: 380,
     margin: 15,
-    float:'left'
+    float: 'left'
   },
 });
 
@@ -43,32 +48,34 @@ function Onlinetools(props) {
 
   if (onlineTools) {
     return (
-      onlineTools.map((tools) => { 
+      onlineTools.map((tools) => {
         return (
-          <Card className={classes.root} key={tools.toolId}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                alt="Namecheap"
-                height="140"
-                image={tools.productImgUrl}
-                title="namecheap"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h4">
-                  {tools.productName}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component={'span'}>
-                  {tools.productShortDesc}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions>
-              <a variant="contained" className="btn btn-warning" href={`/details/${tools.toolId}`}>
-                View
-              </a>
-            </CardActions>
-          </Card>
+          <>
+            <Card className={classes.root} key={tools.toolId}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  alt="Namecheap"
+                  height="140"
+                  image={tools.productImgUrl}
+                  title="namecheap"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h4">
+                    {tools.productName}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary" component={'span'}>
+                    {tools.productShortDesc}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Nav.Link as={Link} variant="contained" className="btn btn-warning" to={`/details/${tools.toolId}`} >
+                  View
+                </Nav.Link>
+              </CardActions>
+            </Card>
+          </>
         )
       })
     )
@@ -77,7 +84,7 @@ function Onlinetools(props) {
       <div>
         <h3>No data found</h3>
       </div>
-      
+
     )
   }
 
