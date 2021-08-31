@@ -2,35 +2,28 @@ import React from 'react';
 import {
     Link
 } from "react-router-dom";
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Container } from 'react-bootstrap';
 
 export default function Appnav(props) {
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div className="container">
+        <>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+                <Container>
+                    <Navbar.Brand as={Link} to="/">{props.title}&nbsp;{props.tail}</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link as={Link} to="/">Home</Nav.Link>
+                            <Nav.Link as={Link} to="/hosting">Ideal Hosting</Nav.Link>
+                            <Nav.Link as={Link} to="/freesoftwares">Free Softwares</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+
+                </Container>
+            </Navbar>
 
 
-                    <Link className="navbar-brand" to="/">
-                        <h3>
-                            <span className="text-light">{props.title}</span>&nbsp;<span className="text-dark rounded-logo-bg">{props.tail}</span>
-                        </h3>
-                    </Link>
-                    <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="icon-reorder"></span>
-                    </button>
-
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav ml-auto">
-                            <li className="nav-item mx-2"><Link className="nav-link text-light" to="/">Home</Link></li>
-                            <li className="nav-item mx-2"><Link className="nav-link text-light" to="/hosting">Ideal Hosting</Link></li>
-                            <li className="nav-item mx-2"><Link className="btn btn-warning" to="/freesoftwares">Free Softwares</Link></li>
-                        </ul>
-                    </div>
-
-
-                </div>
-            </nav>
-        </div>
+        </>
     )
 }
 

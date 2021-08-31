@@ -7,7 +7,7 @@ import { Terms } from './components/Terms';
 import Choosehosting from './components/Choosehosting';
 import Appnav from './components/Appnav';
 import Freesoftware from './components/Freesoftware';
-import details from './components/Details';
+import Details from './components/Details';
 
 
 
@@ -52,7 +52,7 @@ function App() {
         </Route>
         <Route path="/details/:productid">
           <Appnav />
-          <details />
+          <Details />
           <Footer />
         </Route>
        
