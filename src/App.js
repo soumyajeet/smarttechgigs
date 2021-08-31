@@ -13,7 +13,7 @@ import Details from './components/Details';
 
 import {
   BrowserRouter as Router,
-  Route,
+  Route, Switch
 } from "react-router-dom";
 
 function App() {
@@ -50,12 +50,14 @@ function App() {
           <Freesoftware />
           <Footer />
         </Route>
-        <Route path="/details/:productid">
+
+        <Route exact path='/details/:details' component={Details}>
           <Appnav />
           <Details />
           <Footer />
         </Route>
-       
+
+
 
       </Router>
     </>
