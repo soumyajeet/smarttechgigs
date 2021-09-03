@@ -39,4 +39,6 @@
 }
 
 
-
+.img-width {
+  max-width: 400px !important;
+}
