@@ -7,9 +7,10 @@
         "productSubCategory" : "digiassets",
         "productShortDesc" : "Premium design resources for creators at insane discounts.",
         "productLongDesc" : "All-in-one digital asset library for display your creative sides.",
+        "features":[],
         "productAffiliateUrl" : "https://shareasale.com/r.cfm?b=623424&u=2773839&m=50189&urllink=&afftrack=website",
-        "productImgUrl" : "/images/MainCover_800x500.jpg"
-        
+        "productImgUrl" : "/images/MainCover_800x500.jpg",
+        "rating": 5
     },{
         "toolId": "ENVATOELEMENT1",
         "productName" : "All-in-one digital asset library",
@@ -18,8 +19,10 @@
         "productSubCategory" : "digiassets",
         "productShortDesc" : "The unlimited creative subscription for your online journey.",
         "productLongDesc" : "All-in-one digital asset library for creating a creative website for yourself.",
+        "features":[],
         "productAffiliateUrl" : "https://1.envato.market/c/2733920/433179/4662",
-        "productImgUrl" : "/images/Presentation-Templates-Envato.jpg"
+        "productImgUrl" : "/images/Presentation-Templates-Envato.jpg",
+        "rating": 5
     },{
         "toolId": "ENVATOELEMENT2",
         "productName" : "Modern HTML templates",
@@ -28,7 +31,9 @@
         "productSubCategory" : "digiassets",
         "productShortDesc" : "Email, admin, landing page and website templates for your websites and apps.",
         "productLongDesc" : "All-in-one digital asset library for display your creative sides.",
+        "features":[],
         "productAffiliateUrl" : "https://1.envato.market/c/2733920/462354/4662",
-        "productImgUrl" : "/images/67c419f3-fea5-49f9-af0e-bc032ce993ec.jpg" 
+        "productImgUrl" : "/images/67c419f3-fea5-49f9-af0e-bc032ce993ec.jpg",
+        "rating": 5
     }
 ]

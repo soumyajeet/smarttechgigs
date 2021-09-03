@@ -6,10 +6,11 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import axios from 'axios';
-
+import {Link} from "react-router-dom";
+import { Nav } from 'react-bootstrap';
+import Rating from '@material-ui/lab/Rating';
 import {showDetails} from '../actions/Action';
 
 
@@ -44,10 +45,7 @@ function Assetlibrary() {
       .catch((error) => console.error('Error'))
   }
 
-  const clkHandler = (val) => {
-    window.location.href = val.productAffiliateUrl;
-  }
-
+  
   if (onlineTools) {
     return (
       onlineTools.map((tools) => {
@@ -73,10 +71,10 @@ function Assetlibrary() {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Button color="secondary" variant="contained" onClick={()=>clkHandler(tools)}>
-                View
-              </Button>
-
+                <Nav.Link as={Link} variant="contained" className="btn btn-warning" to={`/details/${tools.toolId}`} >
+                  View
+                </Nav.Link>
+              <Rating name="size-medium" defaultValue={tools.rating} m={2} />
             </CardActions>
           </Card>
         )

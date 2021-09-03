@@ -13,7 +13,7 @@ import Details from './components/Details';
 
 import {
   BrowserRouter as Router,
-  Route, Switch
+  Route
 } from "react-router-dom";
 
 function App() {

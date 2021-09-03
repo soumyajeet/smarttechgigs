@@ -7,11 +7,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import axios from 'axios';
-import {
-  Link
-} from "react-router-dom";
-
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Container } from 'react-bootstrap';
+import {Link} from "react-router-dom";
+import Rating from '@material-ui/lab/Rating';
+import { Nav } from 'react-bootstrap';
 
 
 
@@ -70,10 +68,12 @@ function Onlinetools(props) {
                   </Typography>
                 </CardContent>
               </CardActionArea>
+              
               <CardActions>
                 <Nav.Link as={Link} variant="contained" className="btn btn-warning" to={`/details/${tools.toolId}`} >
                   View
                 </Nav.Link>
+                <Rating name="size-medium" defaultValue={tools.rating} m={2} />
               </CardActions>
             </Card>
             

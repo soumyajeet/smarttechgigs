@@ -15,8 +15,7 @@
         ],
         "productAffiliateUrl" : "https://namecheap.pxf.io/c/2733920/738168/5618",
         "productImgUrl" : "/images/namecheap_bundle_deals.jpg",
-        "rating": 4,
-        "hostWebType":"Blog"
+        "rating": 4
     },{
         "toolId": "ONLNNAMECHEAP2",
         "productName" : "free .COM with a hosting purchase!",
@@ -36,8 +35,7 @@
         ],
         "productAffiliateUrl" : "https://namecheap.pxf.io/c/2733920/1124617/5618",
         "productImgUrl" : "/images/freedotcomdomain.JPG",
-        "rating": 4.5,
-        "hostWebType":"Portfolio"
+        "rating": 4.5
     },{
         "toolId": "ONLNNAMECHEAP3",
         "productName" : "Virtual Private Server up to 42% off!",
@@ -56,8 +54,7 @@
         ],
         "productAffiliateUrl" : "https://namecheap.pxf.io/c/2733920/624643/5618",
         "productImgUrl" : "/images/vps.jpg",
-        "rating": 4,
-        "hostWebType":"Blog"
+        "rating": 4
     },{
         "toolId": "AWSHOSTING4",
         "productName" : "Amazon Cloud Hosting",
@@ -78,8 +75,7 @@
         ],
         "productAffiliateUrl" : "https://amzn.to/2VOgp1h",
         "productImgUrl" : "/images/amazon-web-services-ec-simple-cloud-hosting.png",
-        "rating": 4.5,
-        "hostWebType":"Video"
+        "rating": 4.5
     },{
         "toolId": "ONLNNAMECHEAP5",
         "productName" : "EasyWP - Easy WordPress!",
@@ -103,8 +99,7 @@
         ],
         "productAffiliateUrl" : "https://namecheap.pxf.io/c/2733920/830025/5618",
         "productImgUrl" : "/images/5618-830024.png",
-        "rating": 4,
-        "hostWebType":"Blog"
+        "rating": 4
     },{
         "toolId": "AWSHOSTING6",
         "productName" : "Amazon Web Services",
@@ -122,7 +117,50 @@
         ],
         "productAffiliateUrl" : "https://amzn.to/2VOgp1h",
         "productImgUrl" : "/images/gd104nfqr7r8gduizoww.jpeg",
-        "rating": 5,
-        "hostWebType":"Ecommerce"
+        "rating": 5
+    },{
+        "toolId": "INKYDEALS1",
+        "productName" : "Creative Digital Asset Source",
+        "productBaseName" : "Inkydeals",
+        "productCategory" : "Asset Library",
+        "productSubCategory" : "digiassets",
+        "productShortDesc" : "Premium design resources for creators at insane discounts.",
+        "productLongDesc" : "All-in-one digital asset library for display your creative sides.",
+        "features":[
+            "The best deals for digital design assets for designers, photographers and freelancers.",
+            "Transform Ordinary Photos Into Extraordinary Ones."
+        ],
+        "productAffiliateUrl" : "https://shareasale.com/r.cfm?b=623424&u=2773839&m=50189&urllink=&afftrack=website",
+        "productImgUrl" : "/images/MainCover_800x500.jpg",
+        "rating": 5
+    },{
+        "toolId": "ENVATOELEMENT1",
+        "productName" : "All-in-one digital asset library",
+        "productBaseName" : "Envato",
+        "productCategory" : "Asset Library",
+        "productSubCategory" : "digiassets",
+        "productShortDesc" : "The unlimited creative subscription for your online journey.",
+        "productLongDesc" : "All-in-one digital asset library for creating a creative website for yourself.",
+        "features":[
+            "Unlimited downloads - Freedom to play, experiment and create.",
+            "56+ million assets - All the creative assets you need under one subscription.",
+            "Simple licensing - All Envato Elements assets are covered by our lifetime commercial license.",
+            "Cancel any time - We believe in creative freedom - no strings attached."
+        ],
+        "productAffiliateUrl" : "https://1.envato.market/c/2733920/433179/4662",
+        "productImgUrl" : "/images/Presentation-Templates-Envato.jpg",
+        "rating": 5
+    },{
+        "toolId": "ENVATOELEMENT2",
+        "productName" : "Modern HTML templates",
+        "productBaseName" : "Envato",
+        "productCategory" : "Asset Library",
+        "productSubCategory" : "digiassets",
+        "productShortDesc" : "Email, admin, landing page and website templates for your websites and apps.",
+        "productLongDesc" : "All-in-one digital asset library for display your creative sides.",
+        "features":[],
+        "productAffiliateUrl" : "https://1.envato.market/c/2733920/462354/4662",
+        "productImgUrl" : "/images/67c419f3-fea5-49f9-af0e-bc032ce993ec.jpg",
+        "rating": 5
     }
 ]
