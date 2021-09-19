@@ -12,6 +12,7 @@ import {Link} from "react-router-dom";
 import { Nav } from 'react-bootstrap';
 import Rating from '@material-ui/lab/Rating';
 import {showDetails} from '../actions/Action';
+import Loading from './Loading';
 
 
 const useStyles = makeStyles({
@@ -35,8 +36,8 @@ function Assetlibrary() {
     getAllTools();
   }, []);
 
-  const getAllTools = () => {
-    axios.get('/data/digitalassets.json')
+  const getAllTools = async () => {
+    await axios.get('https://digismartautomate.com/api/productsinfo/digiassets')
       .then(res => {
 
         let allTools = res.data;
@@ -85,7 +86,7 @@ function Assetlibrary() {
   } else {
     return (
       <div>
-        <h3>No data found</h3>
+        <Loading />
       </div>
       
     )

@@ -81,8 +81,8 @@ const Upper = (props) => {
                             variant="fullWidth"
                             aria-label="Main menu"
                         >
-                            <Tab label="Web Hosting" {...a11yProps(0)} />
-                            <Tab label="Asset Library" {...a11yProps(1)} />
+                            <Tab label="Hosting" {...a11yProps(0)} />
+                            <Tab label="Assets" {...a11yProps(1)} />
                             
 
                         </Tabs>

@@ -5,9 +5,9 @@ import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import CheckBoxTwoToneIcon from '@material-ui/icons/CheckBoxTwoTone';
 import axios from 'axios';
-import Rating from '@material-ui/lab/Rating';
 import Grid from '@material-ui/core/Grid';
 import CardActions from '@material-ui/core/CardActions';
+import Loading from './Loading';
 
 
 
@@ -18,68 +18,76 @@ function Details(props) {
 
 
     useEffect(() => {
-        axios.get('/data/alldata.json')
+        axios.get(`https://digismartautomate.com/api/productdetails/${details}`)
             .then(res => {
-                console.log(res.data);
-                setDetailsVal(res.data);
+                console.log(res.data[0])
+                setDetailsVal(res.data[0]);
             })
-    }, [])
+    }, [details])
 
 
 
+    if (detailsVal) {
+        return (
+            <Container fixed>
 
-    return (
-        <Container fixed>
+                <Box component="span" m={1}>
+                    <h2 className="text-success text-right p-2">{detailsVal.productName}</h2>
 
+                    <p className="p-3">{detailsVal.productLongDesc}</p>
 
-            {
-                detailsVal.filter(items => items.toolId === details).map((filteredItems, index) => {
-                    return (
-                        <Box component="span" m={1} key={index}>
-                            <h2 className="text-success text-right p-2">{filteredItems.productName}</h2>
+                    <Paper elevation={3}>
+                        <img src={detailsVal.productImgUrl} className="img-fluid my-3 p-3 img-width" alt={detailsVal.productBaseName} />
 
-                            <Paper elevation={3}>
-                                <img src={filteredItems.productImgUrl} className="img-fluid my-3 p-3 img-width" alt={filteredItems.productBaseName} />
+                        
 
-                                <h6 className="px-3">Features:</h6>
-                                <Box p={2}>
+                        <h6 className="px-3">Features:</h6>
+                        <Box p={2}>
 
-                                    {
-                                        filteredItems.features.map((items) => {
-                                            return (
-                                                <>
-                                                    <CheckBoxTwoToneIcon /><span>{items}</span><br />
-                                                </>
-                                            )
-                                        })
-                                    }
-                                    <hr />
-                                    <Grid item sm={6}>
-                                        <h4 className="p-2 text-success">{filteredItems.rating} / 5 Rated</h4>
-                                        <Rating name="size-medium" defaultValue={filteredItems.rating} m={2} />
-                                    </Grid>
-                                    <Grid item sm={6}>
-                                        <CardActions>
-                                            <a variant="contained" className="btn btn-warning" href={filteredItems.productAffiliateUrl} target="_blank" rel="noopener noreferrer">
-                                                {props.buttonText}
-                                            </a>
-                                            
-                                        </CardActions>
-                                    </Grid>
+                            {detailsVal.features ?
+                                detailsVal.features.map((items, i) => {
+                                    return (
+                                        <>
+                                            <CheckBoxTwoToneIcon /><span key={i}>{items}</span><br />
+                                        </>
+                                    )
+                                })
 
-                                </Box>
+                                :
+                                <>
+                                   <Loading />
+                                </>
+                            }
+                            <hr />
+                            <Grid item sm={6}>
+                                <h4 className="p-2 text-success">{detailsVal.rating} / 5 Rated</h4>
+                               
+                            </Grid>
+                            <Grid item sm={6}>
+                                <CardActions>
+                                    <a variant="contained" className="btn btn-warning" href={detailsVal.productAffiliateUrl} target="_blank" rel="noopener noreferrer">
+                                        {props.buttonText}
+                                    </a>
+                                </CardActions>
+                            </Grid>
 
-                            </Paper>
                         </Box>
 
+                    </Paper>
+                </Box>
 
-                    )
 
-                })
-            }
+            </Container>
 
-        </Container>
-    )
+        )
+    } else {
+        return (
+            <div>
+                <Loading />
+            </div>
+
+        )
+    }
 }
 
 Details.defaultProps = {

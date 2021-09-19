@@ -8,6 +8,7 @@ import Choosehosting from './components/Choosehosting';
 import Appnav from './components/Appnav';
 import Freesoftware from './components/Freesoftware';
 import Details from './components/Details';
+import Login from './components/Login';
 
 
 
@@ -15,6 +16,8 @@ import {
   BrowserRouter as Router,
   Route
 } from "react-router-dom";
+import Userprofile from './components/Userprofile';
+import Registration from './components/Registration';
 
 function App() {
   return (
@@ -57,7 +60,23 @@ function App() {
           <Footer />
         </Route>
 
+        <Route exact path='/login' component={Login}>
+          <Appnav />
+          <Login />
+          <Footer />
+        </Route>
 
+        <Route exact path='/profile' component={Userprofile}>
+          <Appnav />
+          <Userprofile />
+          <Footer />
+        </Route>
+
+        <Route exact path='/registration' component={Registration}>
+          <Appnav />
+          <Registration />
+          <Footer />
+        </Route>
 
       </Router>
     </>

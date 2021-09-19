@@ -49,44 +49,23 @@ const Header = (props) => {
 
     return (
         <>
-
             <div className="container">
-
-
-
-
-
-
                 <div className="container py-5">
-
                     <div className="row">
                         <div className="col-md-12">
-                            <div>
-
-                               
-
-                                <Slide autoplay={autoplay}>
-                                
-                                    {images.map(elem=> {
-                                        
-                                        return (
-                                            <div style={style} key={elem.imageId}>
-                                                <a href={elem.affiliateUrl}>
-                                                    <img src={elem.imageUrl} className="img-fluid" alt={elem.imageName} />
-                                                </a>
-                                            </div>
-                                        )
-                                           
-                                       
-                                    })}
-                                    
-                                    
-                                </Slide>
-
-                            </div>
+                            <Slide autoplay={autoplay}>
+                                {images.map(elem => {
+                                    return (
+                                        <div style={style} key={elem.imageId}>
+                                            <a href={elem.affiliateUrl}>
+                                                <img src={elem.imageUrl} className="img-fluid" alt={elem.imageName} />
+                                            </a>
+                                        </div>
+                                    )
+                                })}
+                            </Slide>
                         </div>
                     </div>
-
                 </div>
             </div>
         </>

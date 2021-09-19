@@ -10,6 +10,7 @@ import axios from 'axios';
 import {Link} from "react-router-dom";
 import Rating from '@material-ui/lab/Rating';
 import { Nav } from 'react-bootstrap';
+import Loading from './Loading';
 
 
 
@@ -23,21 +24,22 @@ const useStyles = makeStyles({
 
 
 
-
-
 function Onlinetools(props) {
   const classes = useStyles();
 
   const [onlineTools, setOnlineTools] = useState('');
+  
 
   useEffect(() => {
     getAllTools();
+    
   }, []);
 
-  const getAllTools = () => {
-    axios.get('/data/hostings.json')
-      .then(res => {
 
+ 
+  const getAllTools = async () => {
+    await axios.get('https://digismartautomate.com/api/productsinfo/Hosting')
+      .then(res => {
         let allTools = res.data;
         setOnlineTools(allTools);
       })
@@ -84,7 +86,7 @@ function Onlinetools(props) {
   } else {
     return (
       <div>
-        <h3>No data found</h3>
+       <Loading />
       </div>
 
     )

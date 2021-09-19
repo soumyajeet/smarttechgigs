@@ -3,91 +3,109 @@
         "toolId": "DESKTOPSOFTWARE9",
         "productName" : "Spotify",
         "productBaseName" : "Spotify",
-        "productCategory" : "Desktop Software",
+        "productCategory" : "desktop_software",
         "productSubCategory" : "Music App",
         "productShortDesc" : "Free, open source, cross-platform music listening app.",
         "productLongDesc" : "",
+        "features":[],
         "productAffiliateUrl" : "https://www.spotify.com/in-en/download/windows/",
-        "productImgUrl" : "https://cdn.mos.cms.futurecdn.net/VsN6nQTXtkNxnfppZB8RbX.jpg"
+        "productImgUrl" : "https://cdn.mos.cms.futurecdn.net/VsN6nQTXtkNxnfppZB8RbX.jpg",
+        "rating": 4
     },{
         "toolId": "DESKTOPSOFTWARE8",
         "productName" : "Audacity",
         "productBaseName" : "Audacity",
-        "productCategory" : "Desktop Software",
+        "productCategory" : "desktop_software",
         "productSubCategory" : "Sound Editing Software",
         "productShortDesc" : "Free, open source, cross-platform audio editing software.",
+        "features":[],
         "productLongDesc" : "Audacity is an easy-to-use, multi-track audio editor and recorder for Windows, macOS, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.",
         "productAffiliateUrl" : "https://www.avast.com/en-in/index#pc",
-        "productImgUrl" : "https://www.prosoundnetwork.com/wp-content/uploads/2021/05/2021-05-03-audacity.jpg"
+        "productImgUrl" : "https://www.prosoundnetwork.com/wp-content/uploads/2021/05/2021-05-03-audacity.jpg",
+        "rating": 4
     },{
         "toolId": "DESKTOPSOFTWARE7",
         "productName" : "Avast Internet Security",
         "productBaseName" : "Avast Antivirus",
-        "productCategory" : "Desktop Software",
+        "productCategory" : "desktop_software",
         "productSubCategory" : "Scecurity",
         "productShortDesc" : "Free antivirus is your first step to online freedom.",
         "productLongDesc" : "It can be used as development editor. Open up any kind of files. Great for HTML, Javascript coding.",
+        "features":[],
         "productAffiliateUrl" : "https://www.avast.com/en-in/index#pc",
-        "productImgUrl" : "https://vpnoverview.com/wp-content/uploads/avast-review-featured.png"
+        "productImgUrl" : "https://vpnoverview.com/wp-content/uploads/avast-review-featured.png",
+        "rating": 4
     },{
         "toolId": "DESKTOPSOFTWARE6",
         "productName" : "Avira Internet Security",
         "productBaseName" : "Avira Antivirus",
-        "productCategory" : "Desktop Software",
+        "productCategory" : "desktop_software",
         "productSubCategory" : "Scecurity",
         "productShortDesc" : "Free internet and desktop security for PC.",
         "productLongDesc" : "It can be used as development editor. Open up any kind of files. Great for HTML, Javascript coding.",
+        "features":[],
         "productAffiliateUrl" : "https://www.avira.com/",
-        "productImgUrl" : "https://antivirus-2021.com/wp-content/uploads/2020/08/Download-Avira-Free-Antivirus-2021-for-Windows-10-8-7.jpg"
+        "productImgUrl" : "https://antivirus-2021.com/wp-content/uploads/2020/08/Download-Avira-Free-Antivirus-2021-for-Windows-10-8-7.jpg",
+        "rating": 4
     },{
         "toolId": "DESKTOPSOFTWARE5",
         "productName" : "AnyDesk",
         "productBaseName" : "AnyDesk",
-        "productCategory" : "Desktop Software",
-        "productSubCategory" : "Remote Desktop Software",
+        "productCategory" : "desktop_software",
+        "productSubCategory" : "Remote desktop_software",
         "productShortDesc" : "Connect to a computer remotely, anywhere around the world.",
         "productLongDesc" : "Connect to a computer remotely, be it from the other end of the office or halfway around the world. AnyDesk ensures secure and reliable remote desktop connections for IT professionals and on-the-go individuals alike.",
+        "features":[],
         "productAffiliateUrl" : "https://anydesk.com/en",
-        "productImgUrl" : "https://www.fresherslive.com/assets-images/news/origin/2020/06/09/anydesk-download.jpg"
+        "productImgUrl" : "https://www.fresherslive.com/assets-images/news/origin/2020/06/09/anydesk-download.jpg",
+        "rating": 4
     },{
         "toolId": "DESKTOPSOFTWARE1",
         "productName" : "Notepad ++",
         "productBaseName" : "Notepad ++",
-        "productCategory" : "Desktop Software",
+        "productCategory" : "desktop_software",
         "productSubCategory" : "Development Tools",
         "productShortDesc" : "Best RAW text editor for opening any kind of files.",
         "productLongDesc" : "It can be used as development editor. Open up any kind of files. Great for HTML, Javascript coding.",
+        "features":[],
         "productAffiliateUrl" : "https://notepad-plus-plus.org/downloads/",
-        "productImgUrl" : "https://i.pcmag.com/imagery/articles/01rBnPopClrTbcmGbFMDwIE-1..1597666892.jpg"
+        "productImgUrl" : "https://i.pcmag.com/imagery/articles/01rBnPopClrTbcmGbFMDwIE-1..1597666892.jpg",
+        "rating": 4
     },{
         "toolId": "DESKTOPSOFTWARE2",
         "productName" : "Visual Studio Code",
         "productBaseName" : "Microsoft VSC",
-        "productCategory" : "Desktop Software",
+        "productCategory" : "desktop_software",
         "productSubCategory" : "Development Tools",
         "productShortDesc" : "Great Development IDE for web app development.",
         "productLongDesc" : "It is a complete integrated development environment for any type of programing language.",
+        "features":[],
         "productAffiliateUrl" : "https://code.visualstudio.com/",
-        "productImgUrl" : "https://openexpoeurope.com/wp-content/uploads/2019/11/VSCode.png"
+        "productImgUrl" : "https://openexpoeurope.com/wp-content/uploads/2019/11/VSCode.png",
+        "rating": 4
     },{
         "toolId": "DESKTOPSOFTWARE3",
         "productName" : "MySQL Workbench",
         "productBaseName" : "MySQL",
-        "productCategory" : "Desktop Software",
+        "productCategory" : "desktop_software",
         "productSubCategory" : "Development Tools",
         "productShortDesc" : "MySQL development tool for storing Relational Data.",
         "productLongDesc" : "It is a complete integrated development environment for any type of programing language.",
+        "features":[],
         "productAffiliateUrl" : "https://www.mysql.com/products/workbench/",
-        "productImgUrl" : "http://ubiq.co/database-blog/wp-content/uploads/2020/04/import-csv-file-into-mysql-workbench.jpg"
+        "productImgUrl" : "http://ubiq.co/database-blog/wp-content/uploads/2020/04/import-csv-file-into-mysql-workbench.jpg",
+        "rating": 4
     },{
         "toolId": "DESKTOPSOFTWARE4",
         "productName" : "MongoDB Atlas",
         "productBaseName" : "MongoDB",
-        "productCategory" : "Desktop Software",
+        "productCategory" : "desktop_software",
         "productSubCategory" : "Development Tools",
         "productShortDesc" : "MongoDB Atlas for storing Non relational data.",
         "productLongDesc" : "It is a complete integrated development environment for any type of programing language.",
+        "features":[],
         "productAffiliateUrl" : "https://bit.ly/37UV8ps",
-        "productImgUrl" : "https://www.knowi.com/wp-content/uploads/2020/01/Blog-1-_-Title-Image-1024x536.jpg"
+        "productImgUrl" : "https://www.knowi.com/wp-content/uploads/2020/01/Blog-1-_-Title-Image-1024x536.jpg",
+        "rating": 4
     }
 ]
