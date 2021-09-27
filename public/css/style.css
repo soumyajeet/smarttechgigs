@@ -10,41 +10,6 @@
 @media only screen and (max-width:768px)
 {.navbar{background-color:#1C2331}} */
 
-.para {
-	font-size: 22px;
-  font-family: 'Raleway', sans-serif;
-}
-
-.myButton {
-	box-shadow:inset 0px 0px 0px 0px #cf866c;
-	background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
-	background-color:#d0451b;
-	border-radius:3px;
-	border:1px solid #942911;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:28px;
-	padding:24px 76px;
-	text-decoration:none;
-	text-shadow:0px 0px 0px #854629;
-	font-weight: bold;
-}
-.myButton:hover {
-	background:linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
-	background-color:#bc3315;
-	text-decoration: none;
-	color: #fff;
-	font-weight: bold;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-	text-decoration: none;
-	color: #fff;
-	font-weight: bold;
-}
 
 
 * { box-sizing: border-box; }
@@ -104,38 +69,10 @@
   max-width: 100%;
 }
 
-.bg { 
-  /* The image used */
-  /*background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/website-parallax-background-C.jpg"); */
-	background: url("../images/my_banner.webp");
-  /* Full height */
-  height: 100%; 
 
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-}
-
-
-.morphext > .animated {
-  display: inline-block;
-}
-
-.main-bg {
-	
-	background: url("../images/184-1845261_purple-night-sky-background.webp");
-	height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 .lower-bg {
-  background: linear-gradient(rgba(241, 241, 241, 0.7), rgba(104, 104, 104, 0.7)), url("../images/544752-vettore-circolare-astratto-bianco-e-grigio-della-curva-della-priorita-bassa-per-la-presentazione-di-affari-sfondo-e-concetto-astratto-vettoriale.webp");
+  background: linear-gradient(rgba(241, 241, 241, 0.7), rgba(146, 146, 146, 0.7)), url("../images/544752-vettore-circolare-astratto-bianco-e-grigio-della-curva-della-priorita-bassa-per-la-presentazione-di-affari-sfondo-e-concetto-astratto-vettoriale.webp");
 	height: 100%; 
 
   /* Center and scale the image nicely */
@@ -144,83 +81,6 @@
   background-size: cover;
 }
 
-.products {
-  background:  url("../images/website-parallax-background-C.webp");
-	height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-
-.autofunnels-bg {
-  background:  url("../images/funnel-bg.png");
-	height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.autofunnels-lower-bg {
-  background:  url("../images/funnel-lower-bg.png");
-	height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.wp-bg { 
-  /* The image used */
-  background:  url("../images/EasyWP-review.png");
-  /* Full height */
-  height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-}
-
-.hosting-bg { 
-  /* The image used */
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/namecheap-baby-wallpaper-desktop.jpg");
-  /* background:  url("../images/namecheap-baby-wallpaper-desktop.jpg"); */
-  /* Full height */
-  height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-    
-}
-
-.wpthemes-bg { 
-  /* The image used */
-  background:  url("./images/enavato-wordpress.jpeg");
-  /* Full height */
-  height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-}
-
-
-
-.solid {
-	text-shadow: -2px 2px 0 #000, 2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000; 
-}
 
 
 

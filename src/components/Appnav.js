@@ -149,7 +149,7 @@ function Appnav(props) {
 
 Appnav.defaultProps = {
     title: "Smart",
-    tail: "Tech Gigs",
+    tail: "Soft Hub",
     imageAlt: "boost",
     headline: "Tools Those Inspire"
 }

@@ -9,5 +9,10 @@
         "imageName" : "Bundle offers",
         "imageId" : "BANNER2",
         "affiliateUrl" : "https://namecheap.pxf.io/c/2733920/738168/5618"
+    },{
+        "imageUrl": "/images/freedotcomdomain.JPG",
+        "imageName": "AWS",
+        "imageId": "BANNER3",
+        "affiliateUrl": "#"
     }
 ]
