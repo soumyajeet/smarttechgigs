@@ -11,6 +11,8 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -22,7 +24,7 @@ function Appnav(props) {
     const [open, setOpen] = useState(false);
     const [erroropen, setErrorOpen] = useState(false);
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [name, setFullname] = useState('');
 
     const [user, setUser] = useState();
 
@@ -44,25 +46,41 @@ function Appnav(props) {
         setLogin();
     }
 
-    const signin = () => {
 
-        axios.post(`https://digismartautomate.com/api/login`, { emailid: email, password: password })
-            .then(res => {
-                console.log(res.data);
-                setUser(res.data.emailid)
-                localStorage.setItem('user', res.data.emailid);
-                setOpen(false);
-            })
-            .catch(function (error) {
-                console.log(error.response.data);
-                console.log(error.response.status);
-                console.log(error.response.headers);
-                if (error.response.status === 404) {
-                    props.history.push('/registration');
-                } else if (error.response.status === 400) {
-                    console.log(error);  
-                }
-            });
+    const signup = (e) => {
+        if (email === '') {
+            console.log("Form field missing");
+            toast("Email is mandatory!");
+        } else {
+            axios.post(`https://digismartautomate.com/api/registration`, { email: email, name: name })
+                .then(res => {
+                    console.log(res.data);
+                    if (!res) {
+                        toast("An unexpected error occurred");
+                    } else {
+                        setUser(res.data.emailid)
+                        localStorage.setItem('user', res.data.emailid);
+                        setOpen(false);
+                        toast("Membership successful!");
+                    }
+
+
+                })
+                .catch(function (error) {
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                    if (error.response.status === 404) {
+                        console.log(error);
+                        toast(error.response.data.msg);
+                    } else if (error.response.status === 400) {
+                        console.log(error);
+                        toast(error.response.data.msg);
+                    }
+                });
+        }
+
+
     }
 
 
@@ -75,6 +93,8 @@ function Appnav(props) {
 
     return (
         <>
+            <ToastContainer />
+
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">{props.title}&nbsp;{props.tail}</Navbar.Brand>
@@ -88,25 +108,22 @@ function Appnav(props) {
 
 
 
-                    {/* <Navbar.Collapse className="justify-content-end">
+                    <Navbar.Collapse className="justify-content-end">
                         <Navbar.Text>
-                            {login ?
-                                <Nav variant="outlined" color="primary" onClick={logOut} style={{ 'cursor': 'pointer' }}>Log Out</Nav>
-                                :
-                                <Nav variant="outlined" color="primary" onClick={handleClickOpen} style={{ 'cursor': 'pointer' }}>Login</Nav>
-                            }
+
+
+                            <Nav variant="outlined" color="primary" onClick={handleClickOpen} style={{ 'cursor': 'pointer' }}>Free Membership</Nav>
+
 
                         </Navbar.Text>
-                    </Navbar.Collapse> */}
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
 
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">Login</DialogTitle>
+                <DialogTitle id="form-dialog-title">Become a FREE member to get exclusive deals, coupons, information and many more..</DialogTitle>
                 <DialogContent>
-
                     <TextField
-                        autoFocus
                         margin="dense"
                         id="email"
                         label="Email Address"
@@ -114,20 +131,20 @@ function Appnav(props) {
                         onChange={e => setEmail(e.target.value)}
                         fullWidth
                     />
-
                     <TextField
-                        id="password"
                         margin="dense"
-                        label="Password"
-                        type="password"
-                        autoComplete="current-password"
-                        onChange={e => setPassword(e.target.value)}
+                        id="fullname"
+                        label="Full Name"
+                        type="text"
+                        onChange={e => setFullname(e.target.value)}
                         fullWidth
                     />
+
+
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={signin} color="primary" variant="contained">
-                        Sign In
+                    <Button onClick={signup} color="primary" variant="contained">
+                        Sign Up
                     </Button>
                     <Button onClick={handleClose} color="secondary" variant="contained">
                         Cancel

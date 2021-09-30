@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Terms = () => {
+const Terms = () => {
     return (
             <>
             
@@ -227,3 +227,5 @@ export const Terms = () => {
         </>
     )
 }
+
+export default Terms;

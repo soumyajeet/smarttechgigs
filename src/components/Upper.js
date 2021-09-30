@@ -7,8 +7,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Slider from '@mui/material/Slider';
-
 
 //import Onlinetools from './Onlinetools';
 // import Assetlibrary from './Assetlibrary';
@@ -16,24 +14,6 @@ import Slider from '@mui/material/Slider';
 const Onlinetools = React.lazy(() => import('./Onlinetools'));
 const Assetlibrary = React.lazy(() => import('./Assetlibrary'));
 
-const marks = [
-    {
-        value: 0,
-        label: '0°C',
-    },
-    {
-        value: 20,
-        label: '20°C',
-    },
-    {
-        value: 37,
-        label: '37°C',
-    },
-    {
-        value: 100,
-        label: '100°C',
-    },
-];
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;

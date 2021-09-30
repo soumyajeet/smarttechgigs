@@ -12,21 +12,21 @@ const Reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ITEM:
       return {
-        ...initialState,
+        ...state,
         data: action.payload
       }
     case SHOW_DETAILS:
       return {
-        ...initialState,
+        ...state,
         data: action.payload
       }
     case SHOW_ITEM:
       return {
-        ...initialState,
+        ...state,
         data: action.payload
       }  
     default:
-      return initialState;
+      return state;
   }
 
 };
