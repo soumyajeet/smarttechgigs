@@ -6,17 +6,17 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import axios from 'axios';
 import {Link} from "react-router-dom";
 import Rating from '@material-ui/lab/Rating';
 import { Nav } from 'react-bootstrap';
 import Loading from './Loading';
+import {getAllTools} from '../services/services';
 
 
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 380,
+    maxWidth: 280,
     margin: 15,
     float: 'left'
   },
@@ -26,26 +26,16 @@ const useStyles = makeStyles({
 
 function Onlinetools(props) {
   const classes = useStyles();
-
   const [onlineTools, setOnlineTools] = useState('');
   
-
   useEffect(() => {
-    getAllTools();
-    
+    getAllTools()
+    .then(res => {
+      let allTools = res.data;
+      setOnlineTools(allTools);
+    })
+    .catch((error) => console.error('Error'))
   }, []);
-
-
- 
-  const getAllTools = async () => {
-    await axios.get('https://digismartautomate.com/api/productsinfo/Hosting')
-      .then(res => {
-        let allTools = res.data;
-        setOnlineTools(allTools);
-      })
-      .catch((error) => console.error('Error'))
-  }
-
 
   if (onlineTools) {
     return (
@@ -62,12 +52,10 @@ function Onlinetools(props) {
                   title="namecheap"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="h4">
+                  <Typography gutterBottom variant="h5" component="h6">
                     {tools.productName}
                   </Typography>
-                  <Typography variant="body2" color="textSecondary" component={'span'}>
-                    {tools.productShortDesc}
-                  </Typography>
+                  
                 </CardContent>
               </CardActionArea>
               
@@ -93,8 +81,6 @@ function Onlinetools(props) {
   }
 
 }
-
-
 
 
 export default Onlinetools;

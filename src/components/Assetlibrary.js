@@ -7,24 +7,21 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import axios from 'axios';
 import {Link} from "react-router-dom";
 import { Nav } from 'react-bootstrap';
 import Rating from '@material-ui/lab/Rating';
 import {showDetails} from '../actions/Action';
 import Loading from './Loading';
+import {getAllAssets} from '../services/services';
 
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 380,
+    maxWidth: 280,
     margin: 15,
     float:'left'
   },
 });
-
-
-
 
 
 function Assetlibrary() {
@@ -33,27 +30,19 @@ function Assetlibrary() {
   const [onlineTools, setOnlineTools] = useState('');
   
   useEffect(() => {
-    getAllTools();
+    getAllAssets()
+    .then(res=>{
+      let allTools = res.data;
+      setOnlineTools(allTools);
+    })
+    .catch(err=> console.log(err));
   }, []);
 
-  const getAllTools = async () => {
-    await axios.get('https://digismartautomate.com/api/productsinfo/digiassets')
-      .then(res => {
-
-        let allTools = res.data;
-        setOnlineTools(allTools);
-      })
-      .catch((error) => console.error('Error'))
-  }
-
-  
   if (onlineTools) {
     return (
-      onlineTools.map((tools) => {
-        
+      onlineTools.map((tools) => {  
         return (
           <Card className={classes.root} key={tools.toolId}>
-
             <CardActionArea>
               <CardMedia
                 component="img"
@@ -63,11 +52,8 @@ function Assetlibrary() {
                 title="namecheap"
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="h4">
+                <Typography gutterBottom variant="h5" component="h6">
                   {tools.productName}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component={'span'}>
-                  {tools.productShortDesc}
                 </Typography>
               </CardContent>
             </CardActionArea>
@@ -79,19 +65,15 @@ function Assetlibrary() {
             </CardActions>
           </Card>
         )
-
       })
-
     )
   } else {
     return (
       <div>
         <Loading />
-      </div>
-      
+      </div>   
     )
   }
-
 }
 
 const mapStateToProps=state=>({

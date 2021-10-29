@@ -6,9 +6,9 @@ import Privacy  from './components/Privacy';
 import Terms from './components/Terms';
 import Choosehosting from './components/Choosehosting';
 import Appnav from './components/Appnav';
-import Freesoftware from './components/Freesoftware';
 import Details from './components/Details';
 import Login from './components/Login';
+import Userprofile from './components/Userprofile';
 
 
 
@@ -25,7 +25,7 @@ function App() {
           <Appnav />
           <Header />
           <Upper />
-
+          
           <Footer />
         </Route>
         <Route exact path="/hosting">
@@ -46,11 +46,6 @@ function App() {
           <Terms />
           <Footer />
         </Route>
-        <Route exact path="/freesoftwares">
-          <Appnav />
-          <Freesoftware />
-          <Footer />
-        </Route>
 
         <Route exact path='/details/:details' component={Details}>
           <Appnav />
@@ -61,6 +56,12 @@ function App() {
         <Route exact path='/login' component={Login}>
           <Appnav />
           <Login />
+          <Footer />
+        </Route>
+
+        <Route exact path='/profile' component={Userprofile}>
+          <Appnav />
+          <Userprofile />
           <Footer />
         </Route>
 

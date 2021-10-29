@@ -7,6 +7,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Header from './Header';
 
 //import Onlinetools from './Onlinetools';
 // import Assetlibrary from './Assetlibrary';
@@ -17,8 +18,6 @@ const Assetlibrary = React.lazy(() => import('./Assetlibrary'));
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-
-   
 
     return (
         <div
@@ -51,11 +50,7 @@ function a11yProps(index) {
 }
 
 
-
-
 const Upper = (props) => {
-
-
     const theme = useTheme();
     const [value, setValue] = React.useState(0);
 
@@ -68,11 +63,9 @@ const Upper = (props) => {
     };
 
     return (
-
-
         <div className="container-fluid">
+            
             <div className="container p-3">
-                
                 <div className="row">
                     <AppBar position="static" color="default">
                         <Tabs
@@ -86,15 +79,15 @@ const Upper = (props) => {
                         >
                             <Tab label="Hosting" {...a11yProps(0)} />
                             <Tab label="Assets" {...a11yProps(1)} />
-
-
                         </Tabs>
                     </AppBar>
+                    
                     <SwipeableViews
                         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                         index={value}
                         onChangeIndex={handleChangeIndex}
                     >
+                        
                         <TabPanel value={value} index={0} dir={theme.direction}>
                             <Suspense fallback={<div>Loading Hostings...</div>}>
                                 <Onlinetools />
@@ -105,17 +98,10 @@ const Upper = (props) => {
                                 <Assetlibrary />
                             </Suspense>
                         </TabPanel>
-
-
                     </SwipeableViews>
                 </div>
             </div>
         </div>
-
-
-
-
-
     )
 }
 

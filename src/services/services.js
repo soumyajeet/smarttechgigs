@@ -1,18 +1,39 @@
 import axios from 'axios';
+import { API_URL } from '../globals/config';
 
-const API = 'https://digismartautomate.com/api'
 
-export const getFreeSoftware = () => {
-    return axios.get(`${API}/productsinfo/desktop_software`)
-            
-    // return fetch({
-    //   method: 'GET',
-    //   url: `${API}/productsinfo/desktop_software`,
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(body),
-    // });
-  };
+export const getAllTools = () => {
 
-  
+  return axios.get(`${API_URL}/productsinfo/Hosting`)
+}
+
+export const getAllAssets = () => {
+  return axios.get(`${API_URL}/productsinfo/digiassets`)
+}
+
+export const getAllSoftware = () => {
+  return axios.request({
+    method: 'GET',
+    data: `${API_URL}/productsinfo/desktop_software`
+  });
+}
+
+export function getUserProfileData(emailaddress) {
+  return axios.post(`${API_URL}/userprofile`, {emailid: emailaddress})
+}
+
+export function logIn(obj) {
+  return axios.post(`${API_URL}/login`, obj);
+}
+
+export function registration(regObj) {
+  return axios.post(`${API_URL}/registration`, regObj)
+}
+
+export function updateUser(updateObj) {
+  return axios.put(`${API_URL}/userupdate`, updateObj)
+}
+
+export function searchProduct(value) {
+  return axios.get(`${API_URL}/productsinfo/${value}`)
+}

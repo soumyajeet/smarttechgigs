@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import axios from 'axios';
+import {API_URL} from '../globals/config';
 
 
 
@@ -22,7 +23,7 @@ const Header = (props) => {
     }, []);
 
     const getBannerImages = () => {
-        axios.get('https://digismartautomate.com/api/allbanners')
+        axios.get(`${API_URL}/allbanners`)
             .then(res => {
                 let allBanners = res.data;
                 setImages(allBanners);
