@@ -15,9 +15,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faClipboard, faUserTimes, faUserCog, faUserCheck } from '@fortawesome/free-solid-svg-icons';
 import {logIn, registration} from '../services/services';
-import Search from './Search';
-
-
 
 
 function Appnav(props) {
@@ -153,7 +150,7 @@ function Appnav(props) {
                     
 
                     <Navbar.Collapse className="justify-content-end">
-                    {/* <Search /> */}
+                    
                         <Navbar.Text>
 
                             <NavDropdown title="Become Free Member" id="basic-nav-dropdown">

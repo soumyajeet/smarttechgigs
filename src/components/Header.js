@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import axios from 'axios';
-import {API_URL} from '../globals/config';
+import { API_URL } from '../globals/config';
 
 
 
@@ -10,7 +10,7 @@ const Header = (props) => {
 
     const iState = [];
 
-    
+
     let autoplay = true;
     const [images, setImages] = useState(iState);
     const style = {
@@ -34,8 +34,9 @@ const Header = (props) => {
         <>
             <div className="container-fluid py-5 bg-light">
                 <div className="row">
-                    
+
                     <div className="col-md-12">
+                        
                         <Slide autoplay={autoplay}>
                             {images.map(elem => {
                                 return (
@@ -48,7 +49,7 @@ const Header = (props) => {
                             })}
                         </Slide>
                     </div>
-                    
+
                 </div>
             </div>
         </>

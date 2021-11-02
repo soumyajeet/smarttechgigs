@@ -30,7 +30,7 @@ function Details(props) {
 
     if (detailsVal) {
         return (
-            <div className="container lower-bg">
+            <div className="container">
                 <div className="row my-4">
                             <h2 className="text-success text-right p-2">{detailsVal.productName}</h2>
                             <p className="p-3">{detailsVal.productLongDesc}</p>
@@ -56,14 +56,14 @@ function Details(props) {
                                             <FontAwesomeIcon icon={faStar} />&nbsp;&nbsp;
                                             {detailsVal.rating} / 5 Rated
                                         </h4>
-                                    </Grid>
-                                    <Grid item sm={6}>
+
                                         <CardActions>
                                             <a variant="contained" className="btn btn-warning" href={detailsVal.productAffiliateUrl} target="_blank" rel="noopener noreferrer">
                                                 {props.buttonText}
                                             </a>
                                         </CardActions>
                                     </Grid>
+                                   
                                 </Paper>
                             </div>
 
@@ -79,6 +79,8 @@ function Details(props) {
                                         />
                                         : <img src={detailsVal.productImgUrl} className="img-fluid my-3 p-3 img-width" alt={detailsVal.productBaseName} />
                                 }
+                                
+                                    
                             </div>                  
                 </div>
             </div>
