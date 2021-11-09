@@ -11,6 +11,14 @@ export const getAllAssets = () => {
   return axios.get(`${API_URL}/productsinfo/digiassets`)
 }
 
+export function getDevTools() {
+  return axios.get(`${API_URL}/productsinfo/dev_tool`)
+}
+
+export function getSecurity() {
+  return axios.get(`${API_URL}/productsinfo/security`)
+}
+
 export const getAllSoftware = () => {
   return axios.request({
     method: 'GET',
@@ -37,3 +45,4 @@ export function updateUser(updateObj) {
 export function searchProduct(value) {
   return axios.get(`${API_URL}/productsinfo/${value}`)
 }
+

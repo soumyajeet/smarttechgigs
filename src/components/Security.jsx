@@ -10,7 +10,7 @@ import {Link} from "react-router-dom";
 import Rating from '@material-ui/lab/Rating';
 import { Nav } from 'react-bootstrap';
 import Loading from './Loading';
-import {getAllTools} from '../services/services';
+import {getSecurity} from '../services/services';
 
 
 
@@ -24,23 +24,23 @@ const useStyles = makeStyles({
 
 
 
-function Onlinetools(props) {
+function Security(props) {
   const classes = useStyles();
-  const [onlineTools, setOnlineTools] = useState('');
+  const [security, setSecurity] = useState('');
 
     
   useEffect(() => {
-    getAllTools()
+    getSecurity()
     .then(res => {
       let allTools = res.data;
-      setOnlineTools(allTools);
+      setSecurity(allTools);
     })
     .catch((error) => console.error('Error'))
   }, []);
 
-  if (onlineTools) {
+  if (security) {
     return (
-      onlineTools.map((tools) => {
+        security.map((tools) => {
         return (
           <>
             <Card className={classes.root} key={tools.toolId}>
@@ -84,4 +84,4 @@ function Onlinetools(props) {
 }
 
 
-export default Onlinetools;
+export default Security;

@@ -14,7 +14,7 @@ import Loading from './Loading';
 //import Avatar from '@material-ui/core/Avatar';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {getUserProfileData, updateUser} from '../services/services';
+import {getUserProfileData} from '../services/services';
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
