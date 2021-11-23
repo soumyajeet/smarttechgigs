@@ -1,4 +1,4 @@
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
+import { call, put, takeEvery } from 'redux-saga/effects'
 import {getAllSoftware} from './services/services';
 
 // Worker saga will be fired on USER_FETCH_REQUESTED actions

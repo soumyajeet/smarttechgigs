@@ -5,12 +5,12 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
 import {Link} from "react-router-dom";
 import { Nav } from 'react-bootstrap';
 import Loading from './Loading';
-import {getAllTools} from '../services/services';
 import Rating from '@mui/material/Rating';
-import Typography from '@mui/material/Typography';
+import {getSecurity} from '../services/services';
 
 
 
@@ -24,23 +24,23 @@ const useStyles = makeStyles({
 
 
 
-function Onlinetools(props) {
+function Security(props) {
   const classes = useStyles();
-  const [onlineTools, setOnlineTools] = useState(null);
+  const [security, setSecurity] = useState('');
 
-
+    
   useEffect(() => {
-    getAllTools()
-    .then(data=>{
-      console.log(data.data)
-      setOnlineTools(data.data);
+    getSecurity()
+    .then(res => {
+      let allTools = res.data;
+      setSecurity(allTools);
     })
     .catch((error) => console.error('Error'))
   }, []);
 
-  if (onlineTools) {
+  if (security) {
     return (
-      onlineTools.map((tools) => {
+        security.map((tools) => {
         return (
           <>
             <Card className={classes.root} key={tools.toolId}>
@@ -84,4 +84,4 @@ function Onlinetools(props) {
 }
 
 
-export default Onlinetools;
+export default Security;
