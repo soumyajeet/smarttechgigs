@@ -5,12 +5,12 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
 import {Link} from "react-router-dom";
-import Rating from '@material-ui/lab/Rating';
 import { Nav } from 'react-bootstrap';
 import Loading from './Loading';
 import {getAllTools} from '../services/services';
+import Rating from '@mui/material/Rating';
+import Typography from '@mui/material/Typography';
 
 
 
@@ -26,14 +26,14 @@ const useStyles = makeStyles({
 
 function Onlinetools(props) {
   const classes = useStyles();
-  const [onlineTools, setOnlineTools] = useState('');
+  const [onlineTools, setOnlineTools] = useState(null);
 
-    
+
   useEffect(() => {
     getAllTools()
-    .then(res => {
-      let allTools = res.data;
-      setOnlineTools(allTools);
+    .then(data=>{
+      console.log(data.data)
+      setOnlineTools(data.data);
     })
     .catch((error) => console.error('Error'))
   }, []);
@@ -64,7 +64,7 @@ function Onlinetools(props) {
                 <Nav.Link as={Link} variant="contained" className="btn btn-warning" to={`/details/${tools.toolId}`} >
                   View
                 </Nav.Link>
-                <Rating name="size-medium" defaultValue={tools.rating} m={2} />
+                <Rating name="size-medium" value={tools.rating} m={2} readOnly />
               </CardActions>
             </Card>
             

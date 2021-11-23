@@ -22,6 +22,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.1.0",
     "foundation-sites": "^6.6.3",
+    "lodash": "^4.17.21",
     "material-ui-player": "^0.2.5",
     "mdbreact": "^5.1.0",
     "nodemailer": "^6.6.5",

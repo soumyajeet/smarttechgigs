@@ -18,9 +18,7 @@ import {logIn, registration} from '../services/services';
 
 
 function Appnav(props) {
-
-
-
+    
     const [open, setOpen] = useState(false);
     const [loginOpen, setLoginOpen] = useState(false);
     const [email, setEmail] = useState('');
@@ -148,12 +146,11 @@ function Appnav(props) {
                         </Nav>
                     </Navbar.Collapse> */}
                     
-
                     <Navbar.Collapse className="justify-content-end">
-                    
                         <Navbar.Text>
-
-                            <NavDropdown title="Become Free Member" id="basic-nav-dropdown">
+                        
+                            <NavDropdown title="Membership" id="basic-nav-dropdown">
+                                
                                 {login ?
                                     <>
                                         <NavDropdown.Item style={{ 'cursor': 'pointer', 'color': '#000' }}>

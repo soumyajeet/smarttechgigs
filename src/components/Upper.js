@@ -8,8 +8,6 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-//import Onlinetools from './Onlinetools';
-// import Assetlibrary from './Assetlibrary';
 
 const Onlinetools = React.lazy(() => import('./Onlinetools'));
 const Assetlibrary = React.lazy(() => import('./Assetlibrary'));
@@ -63,8 +61,7 @@ const Upper = (props) => {
     };
 
     return (
-        <div className="container-fluid">
-            
+        <div className="container-fluid"> 
             <div className="container p-3">
                 <div className="row">
                     <AppBar position="static" color="default">
@@ -79,8 +76,7 @@ const Upper = (props) => {
                         >
                             <Tab label="Hosting" {...a11yProps(0)} />
                             <Tab label="Security" {...a11yProps(1)} />
-                            <Tab label="Assets" {...a11yProps(2)} />
-                            
+                            <Tab label="Assets" {...a11yProps(2)} />  
                         </Tabs>
                     </AppBar>
                     
@@ -88,8 +84,7 @@ const Upper = (props) => {
                         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                         index={value}
                         onChangeIndex={handleChangeIndex}
-                    >
-                        
+                    >   
                         <TabPanel value={value} index={0} dir={theme.direction}>
                             <Suspense fallback={<div>Loading Hostings...</div>}>
                                 <Onlinetools />
@@ -104,8 +99,7 @@ const Upper = (props) => {
                             <Suspense fallback={<div>Loading Assets...</div>}>
                                 <Assetlibrary />
                             </Suspense>
-                        </TabPanel>
-                        
+                        </TabPanel>    
                     </SwipeableViews>
                 </div>
             </div>

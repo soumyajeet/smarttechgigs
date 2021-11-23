@@ -46,3 +46,6 @@ export function searchProduct(value) {
   return axios.get(`${API_URL}/productsinfo/${value}`)
 }
 
+export function postReviews(reviewObj) {
+  return axios.post(`${API_URL}/postreviews`, reviewObj)
+}
