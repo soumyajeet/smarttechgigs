@@ -28,6 +28,7 @@
     "lodash": "^4.17.21",
     "material-ui-player": "^0.2.5",
     "mdbreact": "^5.1.0",
+    "mongoose": "^6.3.4",
     "nodemailer": "^6.6.5",
     "parrot-middleware": "^5.0.0-alpha.1",
     "react": "^17.0.2",

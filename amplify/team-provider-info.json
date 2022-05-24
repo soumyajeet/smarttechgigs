@@ -15,7 +15,7 @@
       "function": {
         "megadigimart": {
           "deploymentBucketName": "amplify-mywebsite-master-91322-deployment",
-          "s3Key": "amplify-builds/megadigimart-33774331463654646a58-build.zip"
+          "s3Key": "amplify-builds/megadigimart-396b326a686a466c386e-build.zip"
         }
       }
     }

@@ -16,6 +16,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
 
+
+
 // declare a new express app
 const app = express()
 app.use(bodyParser.json())
