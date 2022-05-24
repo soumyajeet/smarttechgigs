@@ -10,6 +10,14 @@
       "StackName": "amplify-mywebsite-master-91322",
       "StackId": "arn:aws:cloudformation:ap-south-1:084417535388:stack/amplify-mywebsite-master-91322/c27cd1c0-db41-11ec-ac58-062185a78c16",
       "AmplifyAppId": "d2x0qjq2nwh3km"
+    },
+    "categories": {
+      "function": {
+        "megadigimart": {
+          "deploymentBucketName": "amplify-mywebsite-master-91322-deployment",
+          "s3Key": "amplify-builds/megadigimart-792f5569376a37596334-build.zip"
+        }
+      }
     }
   },
   "dev": {
