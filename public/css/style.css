@@ -69,7 +69,30 @@
   max-width: 100%;
 }
 
+.titlePart {
+  display: flexbox;
+  padding:10px;
+  font-style: italic;
+  text-shadow: #000 2px 2px;
+  font-size: larger;
+}
 
+.middlePart {
+  display:flexbox;
+  padding:5px 20px 5px 15px;
+  background-color: #f44336;
+  font-style: italic;
+  text-shadow: #000 2px 2px;
+}
+
+.tailPart {
+  display:flexbox;
+  padding:10px;
+  font-style: italic;
+  color:#f44336;
+  text-shadow: #000 2px 2px;
+  font-size: larger;
+}
 
 .lower-bg {
   background: linear-gradient(rgba(241, 241, 241, 0.7), rgba(146, 146, 146, 0.7)), url("../images/544752-vettore-circolare-astratto-bianco-e-grigio-della-curva-della-priorita-bassa-per-la-presentazione-di-affari-sfondo-e-concetto-astratto-vettoriale.webp");

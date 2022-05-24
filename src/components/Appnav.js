@@ -3,154 +3,164 @@ import {
     Link,
     withRouter
 } from "react-router-dom";
-import { Navbar, Container, NavDropdown } from 'react-bootstrap';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import { ToastContainer, toast } from 'react-toastify';
+import { Navbar, Container } from 'react-bootstrap'; //NavDropdown
+// import Button from '@material-ui/core/Button';
+// import TextField from '@material-ui/core/TextField';
+// import Dialog from '@material-ui/core/Dialog';
+// import DialogActions from '@material-ui/core/DialogActions';
+// import DialogContent from '@material-ui/core/DialogContent';
+// import DialogTitle from '@material-ui/core/DialogTitle';
+import { ToastContainer } from 'react-toastify'; //toast
 import 'react-toastify/dist/ReactToastify.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faClipboard, faUserTimes, faUserCog, faUserCheck } from '@fortawesome/free-solid-svg-icons';
-import {logIn, registration} from '../services/services';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faUser, faClipboard, faUserTimes, faUserCog, faUserCheck } from '@fortawesome/free-solid-svg-icons';
+// import { logIn, registration } from '../services/services';
 
 
 function Appnav(props) {
-    
-    const [open, setOpen] = useState(false);
-    const [loginOpen, setLoginOpen] = useState(false);
-    const [email, setEmail] = useState('');
-    const [firstname, setFirstname] = useState('');
-    const [lastname, setLastname] = useState('');
-    const [password, setPassword] = useState('');
 
-    const [user, setUser] = useState();
+    // const [open, setOpen] = useState(false);
+    // const [loginOpen, setLoginOpen] = useState(false);
+    // const [email, setEmail] = useState('');
+    // const [firstname, setFirstname] = useState('');
+    // const [lastname, setLastname] = useState('');
+    // const [password, setPassword] = useState('');
+
+    // const [user, setUser] = useState();
 
     const [login, setLogin] = useState();
 
 
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
+    // const handleClickOpen = () => {
+    //     setOpen(true);
+    // };
 
-    const handleLoginClickOpen = () => {
-        setLoginOpen(true);
-    };
+    // const handleLoginClickOpen = () => {
+    //     setLoginOpen(true);
+    // };
 
-    const handleClose = () => {
-        setOpen(false);
-        setLoginOpen(false);
-    };
+    // const handleClose = () => {
+    //     setOpen(false);
+    //     setLoginOpen(false);
+    // };
 
-    const logOut = () => {
-        localStorage.clear();
-        setLogin('');
-        setUser('');
-        props.history.push('/')
-    }
-
-
-
-    const signin = () => {
-        if (email === '' || password === '') {
-            toast("Email or Password is missing!");
-        } else {
-            let obj = { email: email, password: password }
-            logIn(obj)
-                .then(res => {
-                    console.log(res.data);
-                    if (!res) {
-                        toast("An unexpected error occurred");
-                    } else {
-                        setUser(email)
-                        localStorage.setItem('user', email);
-                        setLogin(localStorage.getItem('user'));
-                        console.log(user);
-                        setLoginOpen(false);
-                        toast("Login successful!");
-                    }
+    // const logOut = () => {
+    //     localStorage.clear();
+    //     setLogin('');
+    //     setUser('');
+    //     props.history.push('/')
+    // }
 
 
-                })
-                .catch(function (error) {
-                    console.log(error.response.data);
-                    console.log(error.response.status);
-                    console.log(error.response.headers);
-                    if (error.response.status === 404) {
-                        console.log(error);
-                        toast("User Doesn't Exist");
-                    } else if (error.response.status === 400) {
-                        console.log(error);
-                        toast("Invalid Credentials");
-                    }
-                });
-        }
-    }
+
+    // const signin = () => {
+    //     if (email === '' || password === '') {
+    //         toast("Email or Password is missing!");
+    //     } else {
+    //         let obj = { email: email, password: password }
+    //         logIn(obj)
+    //             .then(res => {
+    //                 console.log(res.data);
+    //                 if (!res) {
+    //                     toast("An unexpected error occurred");
+    //                 } else {
+    //                     setUser(email)
+    //                     localStorage.setItem('user', email);
+    //                     setLogin(localStorage.getItem('user'));
+    //                     console.log(user);
+    //                     setLoginOpen(false);
+    //                     toast("Login successful!");
+    //                 }
 
 
-    const signup = (e) => {
-        if (email === '' || password === '') {
-            toast("Email or Password is missing!");
-        } else {
-            let regObj = { email: email, firstname: firstname, lastname: lastname, password: password };
-            registration(regObj)
-                .then(res => {
-                    console.log(res.data);
-                    if (!res) {
-                        toast("An unexpected error occurred");
-                    } else {
-                        //setUser(res.data.emailid)
-                        //localStorage.setItem('user', res.data.emailid);
-                        setOpen(false);
-                        toast("Membership successful!");
-                    }
+    //             })
+    //             .catch(function (error) {
+    //                 console.log(error.response.data);
+    //                 console.log(error.response.status);
+    //                 console.log(error.response.headers);
+    //                 if (error.response.status === 404) {
+    //                     console.log(error);
+    //                     toast("User Doesn't Exist");
+    //                 } else if (error.response.status === 400) {
+    //                     console.log(error);
+    //                     toast("Invalid Credentials");
+    //                 }
+    //             });
+    //     }
+    // }
 
 
-                })
-                .catch(function (error) {
-                    console.log(error.response.data);
-                    console.log(error.response.status);
-                    console.log(error.response.headers);
-                    if (error.response.status === 404) {
-                        console.log(error);
-                        toast(error.response.data.msg);
-                    } else if (error.response.status === 400) {
-                        console.log(error);
-                        toast(error.response.data.msg);
-                    }
-                });
-        }
-    }
+    // const signup = (e) => {
+    //     if (email === '' || password === '') {
+    //         toast("Email or Password is missing!");
+    //     } else {
+    //         var regObj = { email: email, firstname: firstname, lastname: lastname, password: password };
+    //         registration(regObj)
+    //             .then(res => {
+    //                 console.log(res.data);
+    //                 if (!res) {
+    //                     toast("An unexpected error occurred");
+    //                 } else {
+                        
+    //                     let xhr = new XMLHttpRequest();
+    //                     let url = "http://megadigitalmart.com/send_mail.php";
+                        
+    //                     xhr.open("POST", url, true);
+    //                     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    //                     // Sending data with the request
+    //                     xhr.send(JSON.stringify(regObj));
+    //                     setOpen(false);
+    //                     toast("Membership successful!");
+    //                 }
+
+
+    //             })
+    //             .catch(function (error) {
+    //                 console.log(error.response.data);
+    //                 console.log(error.response.status);
+    //                 console.log(error.response.headers);
+    //                 if (error.response.status === 404) {
+    //                     console.log(error);
+    //                     toast(error.response.data.msg);
+    //                 } else if (error.response.status === 400) {
+    //                     console.log(error);
+    //                     toast(error.response.data.msg);
+    //                 }
+    //             });
+    //     }
+    // }
 
     useEffect(() => {
         setLogin(localStorage.getItem('user'));
     }, [])
 
-    const getProfile = () => {
-        props.history.push('/profile')
-    }
+    // const getProfile = () => {
+    //     props.history.push('/profile')
+    // }
 
     return (
         <>
             <ToastContainer />
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
                 <Container>
-                    <Navbar.Brand as={Link} to="/">{props.title}&nbsp;{props.tail}</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/">
+                        <span class="titlePart">{props.title}</span>
+                        <span class="middlePart">{props.middle}</span>
+                        <span class="tailPart">{props.tail}</span>
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     {/* <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
                         </Nav>
                     </Navbar.Collapse> */}
-                    
-                    <Navbar.Collapse className="justify-content-end">
+
+                    {/* <Navbar.Collapse className="justify-content-end">
                         <Navbar.Text>
-                        
-                            <NavDropdown title="Membership" id="basic-nav-dropdown">
-                                
+
+                            <NavDropdown title="Free Subscription" id="basic-nav-dropdown">
+
                                 {login ?
                                     <>
                                         <NavDropdown.Item style={{ 'cursor': 'pointer', 'color': '#000' }}>
@@ -175,11 +185,11 @@ function Appnav(props) {
                                 }
                             </NavDropdown>
                         </Navbar.Text>
-                    </Navbar.Collapse>
+                    </Navbar.Collapse> */}
                 </Container>
             </Navbar>
 
-            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+            {/* <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title"><FontAwesomeIcon icon={faClipboard} /> Become a FREE member to get exclusive deals, coupons, information and many more..</DialogTitle>
                 <DialogContent>
                     <TextField
@@ -190,7 +200,7 @@ function Appnav(props) {
                         onChange={e => setEmail(e.target.value)}
                         fullWidth
                     />
-                    
+
                     <TextField
                         margin="dense"
                         id="firstname"
@@ -228,10 +238,10 @@ function Appnav(props) {
                         Cancel
                     </Button>
                 </DialogActions>
-            </Dialog>
+            </Dialog> */}
 
 
-            <Dialog open={loginOpen} onClose={handleClose} aria-labelledby="form-dialog-title">
+            {/* <Dialog open={loginOpen} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title"><FontAwesomeIcon icon={faUser} /> Log In</DialogTitle>
                 <DialogContent>
                     <TextField
@@ -261,14 +271,15 @@ function Appnav(props) {
                         Cancel
                     </Button>
                 </DialogActions>
-            </Dialog>
+            </Dialog> */}
         </>
     )
 }
 
 Appnav.defaultProps = {
-    title: "Mega Digital Mart",
-    tail: "",
+    title: "Mega",
+    middle: "Digital",
+    tail: "Mart",
     imageAlt: "boost",
     headline: "Tools Those Inspire"
 }

@@ -35,7 +35,7 @@ function Onlinetools(props) {
       console.log(data.data)
       setOnlineTools(data.data);
     })
-    .catch((error) => console.error('Error'))
+    .catch((error) => console.error(error))
   }, []);
 
   if (onlineTools) {
@@ -56,15 +56,16 @@ function Onlinetools(props) {
                   <Typography gutterBottom variant="h5" component="h6">
                     {tools.productName}
                   </Typography>
-                  
+                  <Rating name="size-medium" value={tools.rating} m={2} readOnly />
                 </CardContent>
+               
               </CardActionArea>
               
               <CardActions>
-                <Nav.Link as={Link} variant="contained" className="btn btn-warning" to={`/details/${tools.toolId}`} >
+                <Nav.Link as={Link} variant="contained" className="button button-yellow" to={`/details/${tools.toolId}`} >
                   View
                 </Nav.Link>
-                <Rating name="size-medium" value={tools.rating} m={2} readOnly />
+                
               </CardActions>
             </Card>
             

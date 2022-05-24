@@ -139,7 +139,7 @@ function Details(props) {
                                     </h4>
 
                                     <CardActions>
-                                        <a variant="contained" className="btn btn-warning btn-lg" href={detailsVal.productAffiliateUrl} target="_blank" rel="noopener noreferrer">
+                                        <a variant="contained" className="button button-yellow" href={detailsVal.productAffiliateUrl} target="_blank" rel="noopener noreferrer">
                                             {props.buyButtonText}
                                         </a>
                                     </CardActions>
@@ -255,7 +255,7 @@ function Details(props) {
 }
 
 Details.defaultProps = {
-    buyButtonText: "BUY IT NOW",
+    buyButtonText: "GET IT NOW",
     writeReviewBtn: "Review this product"
 }
 

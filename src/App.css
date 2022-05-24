@@ -69,3 +69,23 @@
     max-width: 320px;
   }
 }
+
+.button {
+  width:100%;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button-yellow {
+  background-color: #dfac40;
+  color: #68501d;
+  font-weight: 800;
+}
+
+.button-yellow:hover {
+  background-color: #bd9134;
+  color: #35280d;
+  font-weight: 900;
+}

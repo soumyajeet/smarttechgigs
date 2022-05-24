@@ -76,7 +76,6 @@ const Upper = (props) => {
                         >
                             <Tab label="Hosting" {...a11yProps(0)} />
                             <Tab label="Security" {...a11yProps(1)} />
-                            <Tab label="Assets" {...a11yProps(2)} />  
                         </Tabs>
                     </AppBar>
                     
@@ -94,12 +93,7 @@ const Upper = (props) => {
                             <Suspense fallback={<div>Loading Security...</div>}>
                                 <Security />
                             </Suspense>
-                        </TabPanel>
-                        <TabPanel value={value} index={2} dir={theme.direction}>
-                            <Suspense fallback={<div>Loading Assets...</div>}>
-                                <Assetlibrary />
-                            </Suspense>
-                        </TabPanel>    
+                        </TabPanel>   
                     </SwipeableViews>
                 </div>
             </div>

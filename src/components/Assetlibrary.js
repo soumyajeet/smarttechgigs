@@ -55,13 +55,14 @@ function Assetlibrary() {
                 <Typography gutterBottom variant="h5" component="h6">
                   {tools.productName}
                 </Typography>
+                <Rating name="size-medium" value={tools.rating} m={2} readOnly />
               </CardContent>
             </CardActionArea>
             <CardActions>
-                <Nav.Link as={Link} variant="contained" className="btn btn-warning" to={`/details/${tools.toolId}`} >
+                <Nav.Link as={Link} variant="contained" className="button button-yellow" to={`/details/${tools.toolId}`} >
                   View
                 </Nav.Link>
-              <Rating name="size-medium" value={tools.rating} m={2} readOnly />
+              
             </CardActions>
           </Card>
         )

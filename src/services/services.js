@@ -20,14 +20,11 @@ export function getSecurity() {
 }
 
 export const getAllSoftware = () => {
-  return axios.request({
-    method: 'GET',
-    data: `${API_URL}/productsinfo/desktop_software`
-  });
+  return axios.get(`${API_URL}/productsinfo/desktop_software`);
 }
 
 export function getUserProfileData(emailaddress) {
-  return axios.post(`${API_URL}/userprofile`, {emailid: emailaddress})
+  return axios.post(`${API_URL}/userprofile`, { emailid: emailaddress })
 }
 
 export function logIn(obj) {
@@ -48,4 +45,8 @@ export function searchProduct(value) {
 
 export function postReviews(reviewObj) {
   return axios.post(`${API_URL}/postreviews`, reviewObj)
+}
+
+export function getBannerImages() {
+  return axios.get(`${API_URL}/allbanners`)
 }

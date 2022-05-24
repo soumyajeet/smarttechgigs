@@ -7,8 +7,9 @@ export default function Footer() {
       };
     return (
         <div className="container-fluid pb-0 mb-0 justify-content-center">
-            <footer className="row text-light bg-dark p-2">
-                Copyright © {getCurrentYear()} Soumyajit. All Rights Reserved.
+            <footer className="row text-dark p-2">
+                <span className='text-left'>Copyright © {getCurrentYear()} megadigitalmart. All Rights Reserved.</span>
+                
             </footer>
         </div>
     )
