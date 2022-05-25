@@ -1,31 +1,17 @@
 import axios from 'axios';
 import { API_URL } from '../globals/config';
 
-export const getTagline = () => {
-
-  return axios.get(`${API_URL}/items`)
-}
 
 export const getAllTools = () => {
 
-  return axios.get(`${API_URL}/productsinfo/Hosting`)
+  return axios.get(`https://7plfgqzjtg.execute-api.ap-south-1.amazonaws.com/dev/products/Hosting`)
 }
 
-export const getAllAssets = () => {
-  return axios.get(`${API_URL}/productsinfo/digiassets`)
-}
-
-export function getDevTools() {
-  return axios.get(`${API_URL}/productsinfo/dev_tool`)
-}
 
 export function getSecurity() {
-  return axios.get(`${API_URL}/productsinfo/security`)
+  return axios.get(`https://7plfgqzjtg.execute-api.ap-south-1.amazonaws.com/dev/products/security`)
 }
 
-export const getAllSoftware = () => {
-  return axios.get(`${API_URL}/productsinfo/desktop_software`);
-}
 
 export function getUserProfileData(emailaddress) {
   return axios.post(`${API_URL}/userprofile`, { emailid: emailaddress })

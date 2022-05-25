@@ -11,7 +11,6 @@ import {Link} from "react-router-dom";
 import { Nav } from 'react-bootstrap';
 import {showDetails} from '../actions/Action';
 import Loading from './Loading';
-import {getAllAssets} from '../services/services';
 import Rating from '@mui/material/Rating';
 
 
@@ -29,14 +28,7 @@ function Assetlibrary() {
 
   const [onlineTools, setOnlineTools] = useState('');
   
-  useEffect(() => {
-    getAllAssets()
-    .then(res=>{
-      let allTools = res.data;
-      setOnlineTools(allTools);
-    })
-    .catch(err=> console.log(err));
-  }, []);
+  
 
   if (onlineTools) {
     return (

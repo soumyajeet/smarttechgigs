@@ -26,14 +26,15 @@ const useStyles = makeStyles({
 
 function Onlinetools(props) {
   const classes = useStyles();
-  const [onlineTools, setOnlineTools] = useState(null);
+  const [onlineTools, setOnlineTools] = useState([]);
 
 
   useEffect(() => {
     getAllTools()
-    .then(data=>{
-      console.log(data.data)
-      setOnlineTools(data.data);
+    .then(res=>{
+      console.log(res.data)
+
+      setOnlineTools(res.data[0]);
     })
     .catch((error) => console.error(error))
   }, []);
