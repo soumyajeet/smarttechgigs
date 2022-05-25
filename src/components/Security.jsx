@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 
 function Security(props) {
   const classes = useStyles();
-  const [security, setSecurity] = useState('');
+  const [security, setSecurity] = useState([]);
 
     
   useEffect(() => {
