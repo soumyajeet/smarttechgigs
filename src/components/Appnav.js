@@ -35,7 +35,7 @@ function Appnav(props) {
     useEffect(() => {
         getTagline()
         .then(res=>{
-          let response = res;
+          let response = res.data;
           setTagline(response);
         })
         .catch(err=> console.log(err));
@@ -158,6 +158,7 @@ function Appnav(props) {
                         <span class="titlePart">{props.title}</span>
                         <span class="middlePart">{props.middle}</span>
                         <span class="tailPart">{props.tail}</span>
+                        <span class="tagLine">{tagline}</span>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     {/* <Navbar.Collapse id="responsive-navbar-nav">

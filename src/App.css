@@ -55,6 +55,39 @@
 }
 
 
+.titlePart {
+  display: flexbox;
+  padding:10px;
+  font-style: bold;
+  text-shadow: #000 2px 2px;
+  font-size:28px;
+}
+
+.middlePart {
+  display:flexbox;
+  padding:5px 20px 5px 15px;
+  background-color: #f44336;
+  font-style: italic;
+  text-shadow: #000 2px 2px;
+  font-size:24px;
+}
+
+.tailPart {
+  display:flexbox;
+  padding:10px;
+  font-style: normal;
+  color:#f44336;
+  text-shadow: #000 2px 2px;
+  font-size:24px;
+}
+
+.tagLine {
+  font-size: small;
+  display: flex;
+  text-align: right;
+}
+
+
 .img-width {
   max-width: 400px !important;
 }
