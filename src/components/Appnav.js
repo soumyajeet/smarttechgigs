@@ -3,6 +3,7 @@ import {
     Link,
     withRouter
 } from "react-router-dom";
+import {getTagline} from '../services/services';
 import { Navbar, Container } from 'react-bootstrap'; //NavDropdown
 // import Button from '@material-ui/core/Button';
 // import TextField from '@material-ui/core/TextField';
@@ -29,7 +30,16 @@ function Appnav(props) {
     // const [user, setUser] = useState();
 
     const [login, setLogin] = useState();
+    const [tagline, setTagline] = useState();
 
+    useEffect(() => {
+        getTagline()
+        .then(res=>{
+          let response = res;
+          setTagline(response);
+        })
+        .catch(err=> console.log(err));
+      }, []);
 
 
     // const handleClickOpen = () => {

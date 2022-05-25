@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { API_URL } from '../globals/config';
 
+export const getTagline = () => {
+
+  return axios.get(`${API_URL}/items`)
+}
 
 export const getAllTools = () => {
 
