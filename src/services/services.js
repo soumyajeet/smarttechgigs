@@ -38,5 +38,5 @@ export function postReviews(reviewObj) {
 }
 
 export function getBannerImages() {
-  return axios.get(`${API_URL}/allbanners`)
+  return axios.get(`${API_URL}/banners`)
 }

@@ -32,10 +32,9 @@ function Security(props) {
   useEffect(() => {
     getSecurity()
     .then(res => {
-      let allTools = res.data;
-      setSecurity(allTools);
+      setSecurity(res.data.data);
     })
-    .catch((error) => console.error('Error'))
+    .catch((error) => console.error('Error',error))
   }, []);
 
   if (security) {

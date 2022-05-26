@@ -34,7 +34,7 @@ const Header = (props) => {
         getBannerImages()
             .then(res => {
                 let allBanners = res.data;
-                setImages(allBanners);
+                setImages(res.data.data);
             })
     }, []);
 
@@ -47,7 +47,7 @@ const Header = (props) => {
                     <div className="col-md-2"></div>
                     <div className="col-md-8">
 
-                        <Carousel
+                        {/* <Carousel
                             autoplay={true}
                             animation="slide"
                             indicators={false}
@@ -66,9 +66,9 @@ const Header = (props) => {
                             {images.map((item) => (
                                 <img src={item.imageUrl} alt={item.imageName} className={classes.image} />
                             ))}
-                        </Carousel>
+                        </Carousel> */}
 
-                        {/* <Slide autoplay={autoplay}>
+                        <Slide autoplay={autoplay}>
                             {images.map(elem => {
                                 return (
                                     <div style={style} key={elem.imageId}>
@@ -78,7 +78,7 @@ const Header = (props) => {
                                     </div>
                                 )
                             })}
-                        </Slide> */}
+                        </Slide>
                     </div>
                     <div className="col-md-2"></div>
                 </div>

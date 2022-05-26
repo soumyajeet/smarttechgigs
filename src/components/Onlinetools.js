@@ -32,9 +32,7 @@ function Onlinetools(props) {
   useEffect(() => {
     getAllTools()
     .then(res=>{
-      console.log(res.data)
-
-      setOnlineTools(res.data[0]);
+      setOnlineTools(res.data.data);
     })
     .catch((error) => console.error(error))
   }, []);
