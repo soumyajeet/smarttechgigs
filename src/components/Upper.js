@@ -10,7 +10,6 @@ import Box from '@material-ui/core/Box';
 
 
 const Onlinetools = React.lazy(() => import('./Onlinetools'));
-const Assetlibrary = React.lazy(() => import('./Assetlibrary'));
 const Security = React.lazy(() => import('./Security'));
 
 

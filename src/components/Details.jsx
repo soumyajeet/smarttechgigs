@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import Paper from '@material-ui/core/Paper';
 import CheckBoxTwoToneIcon from '@material-ui/icons/CheckBoxTwoTone';
-import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 import CardActions from '@material-ui/core/CardActions';
 import Loading from './Loading';
 import ReactPlayer from 'react-player';
-import { API_URL } from '../globals/config';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faClipboard } from '@fortawesome/free-solid-svg-icons'
 import Button from '@material-ui/core/Button';
@@ -21,7 +19,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 
-import { postReviews, getUserProfileData } from '../services/services';
+import { postReviews, getUserProfileData, getProductsInfo } from '../services/services';
 
 
 function Details(props) {
@@ -35,6 +33,8 @@ function Details(props) {
     const [txtDisable, setTxtDisable] = useState();
 
     const [userFullName, setUserFullName] = useState();
+
+            
 
     
 
@@ -57,13 +57,14 @@ function Details(props) {
         const loggedInUser = localStorage.getItem('user');
         console.log("loggedInUser", loggedInUser)
         getCurrentUserDetails(loggedInUser);
-        axios.get(`${API_URL}/productdetails/${details}`)
-            .then(res => {
-                
-                let theProdData = res.data[0]
-                setDetailsVal(theProdData);
-                //console.log(detailsVal);
-            })
+        
+        getProductsInfo(details)
+        .then(res=>{
+            setDetailsVal(res.data.data[0]);
+        })
+        .catch((error)=>console.error(error))
+
+        
     }, [details])
 
     function handleWriteReview() {

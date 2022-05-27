@@ -4,12 +4,16 @@ import { API_URL } from '../globals/config';
 
 export const getAllTools = () => {
 
-  return axios.get(`https://7plfgqzjtg.execute-api.ap-south-1.amazonaws.com/dev/products/Hosting`)
+  return axios.get(`${API_URL}/products/Hosting`)
 }
 
 
 export function getSecurity() {
-  return axios.get(`https://7plfgqzjtg.execute-api.ap-south-1.amazonaws.com/dev/products/security`)
+  return axios.get(`${API_URL}/products/security`)
+}
+
+export function getProductsInfo(item) {
+  return axios.get(`${API_URL}/products/productsinfo/${item}`)
 }
 
 
@@ -30,7 +34,7 @@ export function updateUser(updateObj) {
 }
 
 export function searchProduct(value) {
-  return axios.get(`${API_URL}/productsinfo/${value}`)
+  return axios.get(`${API_URL}/products/${value}`)
 }
 
 export function postReviews(reviewObj) {
