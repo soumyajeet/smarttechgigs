@@ -8,16 +8,16 @@ import Loading from './Loading';
 import ReactPlayer from 'react-player';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faClipboard } from '@fortawesome/free-solid-svg-icons'
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
+// import Button from '@material-ui/core/Button';
+// import TextField from '@material-ui/core/TextField';
+// import Dialog from '@material-ui/core/Dialog';
+// import DialogActions from '@material-ui/core/DialogActions';
+// import DialogContent from '@material-ui/core/DialogContent';
+// import DialogTitle from '@material-ui/core/DialogTitle';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Box from '@mui/material/Box';
-import Rating from '@mui/material/Rating';
+// import Box from '@mui/material/Box';
+// import Rating from '@mui/material/Rating';
 
 import { postReviews, getUserProfileData, getProductsInfo } from '../services/services';
 
@@ -65,7 +65,7 @@ function Details(props) {
         .catch((error)=>console.error(error))
 
         
-    }, [details])
+    }, [])
 
     function handleWriteReview() {
         setOpen(true);
@@ -164,7 +164,7 @@ function Details(props) {
                         </div>
                     </div>
 
-                    <Box sx={{
+                    {/* <Box sx={{
                         '& > legend': { mt: 2 },
                     }}>
                         <div className="row mt-5">
@@ -196,19 +196,19 @@ function Details(props) {
                             </div>
 
                         </div>
-                    </Box>
+                    </Box> */}
 
-                    <div className="row my-2">
+                    {/* <div className="row my-2">
                         <button className="btn btn-secondary btn-lg" onClick={handleWriteReview}>
                             {props.writeReviewBtn}
                         </button>
-                    </div>
+                    </div> */}
 
 
 
                 </div>
 
-                <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" fullWidth="true" maxWidth="sm">
+                {/* <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" fullWidth="true" maxWidth="sm">
                     <DialogTitle id="form-dialog-title"><FontAwesomeIcon icon={faClipboard} /> Write a review</DialogTitle>
                     <DialogContent>
 
@@ -240,7 +240,7 @@ function Details(props) {
                             Cancel
                         </Button>
                     </DialogActions>
-                </Dialog>
+                </Dialog> */}
 
 
             </>
