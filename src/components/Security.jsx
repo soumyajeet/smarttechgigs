@@ -14,6 +14,7 @@ import {getSecurity} from '../services/services';
 
 
 
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 280,
@@ -27,6 +28,7 @@ const useStyles = makeStyles({
 function Security(props) {
   const classes = useStyles();
   const [security, setSecurity] = useState([]);
+  
 
     
   useEffect(() => {
@@ -58,12 +60,13 @@ function Security(props) {
                   <Rating name="size-medium" value={tools.rating} m={2} readOnly />
                 </CardContent>
               </CardActionArea>
+
+              
               
               <CardActions>
                 <Nav.Link as={Link} variant="contained" className="button button-yellow" to={`/details/${tools.toolId}`} >
                   View
                 </Nav.Link>
-                
               </CardActions>
             </Card>
             

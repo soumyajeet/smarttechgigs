@@ -11,6 +11,7 @@ import Box from '@material-ui/core/Box';
 
 const Onlinetools = React.lazy(() => import('./Onlinetools'));
 const Security = React.lazy(() => import('./Security'));
+const Investment = React.lazy(() => import('./Investment'));
 
 
 function TabPanel(props) {
@@ -75,6 +76,7 @@ const Upper = (props) => {
                         >
                             <Tab label="Hosting" {...a11yProps(0)} />
                             <Tab label="Security" {...a11yProps(1)} />
+                            <Tab label="Investment" {...a11yProps(2)} />
                         </Tabs>
                     </AppBar>
                     
@@ -93,6 +95,11 @@ const Upper = (props) => {
                                 <Security />
                             </Suspense>
                         </TabPanel>   
+                        <TabPanel value={value} index={2} dir={theme.direction}>
+                            <Suspense fallback={<div>Loading Investment...</div>}>
+                                <Investment />
+                            </Suspense>
+                        </TabPanel> 
                     </SwipeableViews>
                 </div>
             </div>

@@ -12,6 +12,10 @@ export function getSecurity() {
   return axios.get(`${API_URL}/products/security`)
 }
 
+export function getInvestment() {
+  return axios.get(`${API_URL}/products/investment`)
+}
+
 export function getProductsInfo(item) {
   return axios.get(`${API_URL}/products/productsinfo/${item}`)
 }
