@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { Nav } from 'react-bootstrap';
 import Loading from './Loading';
 import Rating from '@mui/material/Rating';
-import {getInvestment} from '../services/services';
+import { getInvestment } from '../services/services';
 
 
 const useStyles = makeStyles({
@@ -32,6 +32,7 @@ function Investment() {
             })
             .catch((error) => console.error('Error', error))
     }, []);
+
 
 
     if (items) {

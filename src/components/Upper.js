@@ -74,9 +74,9 @@ const Upper = (props) => {
                             variant="fullWidth"
                             aria-label="Main menu"
                         >
-                            <Tab label="Hosting" {...a11yProps(0)} />
-                            <Tab label="Security" {...a11yProps(1)} />
-                            <Tab label="Investment" {...a11yProps(2)} />
+                            <Tab label="Investment" {...a11yProps(0)} />
+                            <Tab label="Hosting" {...a11yProps(1)} />
+                            <Tab label="Security" {...a11yProps(2)} />
                         </Tabs>
                     </AppBar>
                     
@@ -86,18 +86,20 @@ const Upper = (props) => {
                         onChangeIndex={handleChangeIndex}
                     >   
                         <TabPanel value={value} index={0} dir={theme.direction}>
-                            <Suspense fallback={<div>Loading Hostings...</div>}>
-                                <Onlinetools />
+                            <Suspense fallback={<div>Loading Investment...</div>}>
+                                <Investment />
+                                
                             </Suspense>
                         </TabPanel>
                         <TabPanel value={value} index={1} dir={theme.direction}>
-                            <Suspense fallback={<div>Loading Security...</div>}>
-                                <Security />
+                            <Suspense fallback={<div>Loading Hosting...</div>}>
+                                <Onlinetools />
+                                
                             </Suspense>
                         </TabPanel>   
                         <TabPanel value={value} index={2} dir={theme.direction}>
-                            <Suspense fallback={<div>Loading Investment...</div>}>
-                                <Investment />
+                            <Suspense fallback={<div>Loading Security...</div>}>
+                                <Security />
                             </Suspense>
                         </TabPanel> 
                     </SwipeableViews>
