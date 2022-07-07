@@ -7,6 +7,21 @@
         {
             "type": "aws-sam",
             "request": "direct-invoke",
+            "name": "src:db.handler (nodejs16.x)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "${workspaceFolder}/amplify/backend/function/megaDigitalMartFunction/src",
+                "lambdaHandler": "db.handler"
+            },
+            "lambda": {
+                "runtime": "nodejs16.x",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
             "name": "mywebsite:src/services/services.getDevTools (nodejs14.x)",
             "invokeTarget": {
                 "target": "code",
