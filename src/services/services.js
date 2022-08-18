@@ -2,49 +2,64 @@ import axios from 'axios';
 import { API_URL } from '../globals/config';
 
 
-export const getAllTools = () => {
+export const getAllTools = async () => {
 
-  return axios.get(`${API_URL}/products/Hosting`)
+  const response = await axios.get(`${API_URL}/products/Hosting`);
+  return response;
 }
 
 
-export function getSecurity() {
-  return axios.get(`${API_URL}/products/security`)
+export async function getSecurity() {
+   const response = await axios.get(`${API_URL}/products/security`);
+   return response;
 }
 
-export function getInvestment() {
-  return axios.get(`${API_URL}/products/investment`)
+export async function getInvestment() {
+  const res = await axios.get(`${API_URL}/products/investment`);
+  return res;
 }
 
-export function getProductsInfo(item) {
-  return axios.get(`${API_URL}/products/productsinfo/${item}`)
+export async function getProductsInfo(item) {
+   const res = await axios.get(`${API_URL}/products/productsinfo/${item}`);
+   return res;
 }
 
 
-export function getUserProfileData(emailaddress) {
-  return axios.post(`${API_URL}/userprofile`, { emailid: emailaddress })
+export async function getUserProfileData(emailaddress) {
+  const options = {
+    headers:  {'content-type': 'application/json'},
+    body: JSON.stringify({ emailid: emailaddress }),
+  }
+   const response = await axios.post(`${API_URL}/userprofile`, options);
+   return response;
 }
 
-export function logIn(obj) {
-  return axios.post(`${API_URL}/login`, obj);
+export async function logIn(obj) {
+  const res = await axios.post(`${API_URL}/login`, obj);
+  return res;
 }
 
-export function registration(regObj) {
-  return axios.post(`${API_URL}/registration`, regObj)
+export async function registration(regObj) {
+   const res = await axios.post(`${API_URL}/registration`, regObj);
+   return res;
 }
 
-export function updateUser(updateObj) {
-  return axios.put(`${API_URL}/userupdate`, updateObj)
+export async function updateUser(updateObj) {
+   const res = await axios.put(`${API_URL}/userupdate`, updateObj)
+   return res;
 }
 
-export function searchProduct(value) {
-  return axios.get(`${API_URL}/products/${value}`)
+export async function searchProduct(value) {
+  const res = await axios.get(`${API_URL}/products/${value}`);
+  return res;
 }
 
-export function postReviews(reviewObj) {
-  return axios.post(`${API_URL}/postreviews`, reviewObj)
+export async function postReviews(reviewObj) {
+  const res = await axios.post(`${API_URL}/postreviews`, reviewObj)
+  return res;
 }
 
-export function getBannerImages() {
-  return axios.get(`${API_URL}/banners`)
+export async function getBannerImages() {
+   const res = await axios.get(`${API_URL}/banners`)
+   return res;
 }

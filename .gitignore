@@ -9,7 +9,7 @@
 /coverage
 
 # images
-#/public/images/
+/public/images/
 
 # production
 /build/
