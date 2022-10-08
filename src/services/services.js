@@ -8,6 +8,12 @@ export const getAllTools = async () => {
   return response;
 }
 
+export const getProductivity = async () => {
+
+  const response = await axios.get(`${API_URL}/products/productivity`);
+  return response;
+}
+
 
 export async function getSecurity() {
    const response = await axios.get(`${API_URL}/products/security`);

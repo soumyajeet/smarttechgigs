@@ -7,6 +7,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Productivity from './Productivity';
 
 
 const Onlinetools = React.lazy(() => import('./Onlinetools'));
@@ -77,6 +78,7 @@ const Upper = (props) => {
                             <Tab label="Investment" {...a11yProps(0)} />
                             <Tab label="Hosting" {...a11yProps(1)} />
                             <Tab label="Security" {...a11yProps(2)} />
+                            <Tab label="Productivity" {...a11yProps(3)} />
                         </Tabs>
                     </AppBar>
                     
@@ -100,6 +102,11 @@ const Upper = (props) => {
                         <TabPanel value={value} index={2} dir={theme.direction}>
                             <Suspense fallback={<div>Loading Security...</div>}>
                                 <Security />
+                            </Suspense>
+                        </TabPanel> 
+                        <TabPanel value={value} index={3} dir={theme.direction}>
+                            <Suspense fallback={<div>Loading Productivity...</div>}>
+                                <Productivity />
                             </Suspense>
                         </TabPanel> 
                     </SwipeableViews>
